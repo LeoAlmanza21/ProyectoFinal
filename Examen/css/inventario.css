@@ -1,0 +1,132 @@
+.navbar{
+    padding-left: 4rem;
+    margin-bottom: 3rem;
+}
+#formulario div{
+    display: flex;
+    padding-left: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+#formulario p{
+    padding-right: 1rem;
+    margin-bottom: 0;
+}
+#formulario{
+    padding-bottom: 4rem;
+    background-color: #137bd64a;
+    height: 21rem;
+    border-radius: 53px;
+    padding-top: 3rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+#formularioCon{
+    
+    padding-left: 4rem;
+    padding-bottom: 2rem;
+    background-color: #137bd64a;
+    height: 11rem;
+    border-radius: 44px;
+    padding-top: 3rem;
+    flex-wrap: wrap;
+}
+#formularioCon div{
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+#formulario input{
+    border-radius: 100px;
+    padding-left: 1rem;
+}
+
+.idProducto, .idCategoria, .idExistencia, .idReorden{
+    width: 35%;
+}
+.idExistencia, .idReorden, #idPrecio, #idFoto {
+    width: 25%;
+}
+#agregar{
+    width: 30%;
+}
+#producto, #categoria, #existencia, #reorden, #foto, #precio {
+    width: 100%;
+}
+#inventario td{
+    padding-left: 4%;
+}
+
+#tblInventario th{
+    background-color: #0d6dfd89;
+}
+
+/* ------------------------------------------------------ */
+.agregar{
+    padding: 15px 40px;
+    border-radius: 100px;
+     position: absolute; 
+    /* transition: all .2s;  */
+}
+.agregar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.646);
+}
+.agregar:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+/* -------------------------------------------------------- */
+td button{
+    padding: 10px 30px;
+    border-radius: 100px;
+    /* transition: all .2s;  */
+}
+td button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.646);
+}
+td button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 991px) {
+    .idClave , .idProducto, .idCategoria, .idExistencia, .idReorden{
+        width: 45%;
+    }
+    .idExistencia, .idReorden, .idPrecio, .idFoto {
+        width: 45%;
+    }
+    #formulario{
+        height: 30rem;
+    }
+    #agregar{
+        width: 60%;
+    }
+    #clave{
+        width: 90%;
+    }
+    #formularioCon{
+        height: 15rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .idClave , .idProducto, .idCategoria, .idExistencia, .idReorden{
+        width: 90%;
+    }
+    .idExistencia, .idReorden, .idPrecio, .idFoto {
+        width: 90%;
+    }
+    #formulario{
+        height: 45rem;
+    }
+    #agregar{
+        width: 60%;
+    }
+    #formularioCon{
+        height: 25rem;
+    }
+}

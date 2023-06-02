@@ -1,0 +1,186 @@
+.container a {
+  text-decoration:none;
+  color: #000;
+}
+
+#fondo {
+    width: 100%;
+    height: 75%;
+}
+
+#botones {
+    text-align: end;
+    display: flex;
+    flex-direction: row;
+}
+
+#login {
+    margin-left: 70%;
+    margin-top: 10%;
+    margin-right: 5%;
+    background-color: aquamarine;
+    text-align: center;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+#contenedorPublicidad {
+    display: flex;
+    flex-direction: row;
+    width: 45%;
+    margin: 5ex;
+}
+
+.publicidad {
+    background-color: rgb(141, 3, 3);
+    display: flex;
+    flex-direction: column;
+    height: 10%;
+    width: 45%;
+    margin: 5ex;
+
+}
+
+#formLogin {
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+:root {
+    --bgcolor: rgb(245, 245, 13);
+}
+body{
+    background-color: lightgrey;
+    font-family: sans-serif;
+  }
+  
+  .container{
+    margin: auto;
+    background-color: rgb(223, 238, 9);
+    width: 900px;
+    padding: 30px;
+  }
+  
+  ul, li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+  }
+  img{
+    width: 300px;
+    height: 300px;
+  }
+  
+  ul.slider{
+    position: relative;
+    width: 800px;
+    height: 300px;
+  }
+  
+  ul.slider li {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      opacity: 0;
+      width: inherit;
+      height: inherit;
+      transition: opacity .5s;
+      background:#fff;
+  }
+  
+  ul.slider li img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  ul.slider li:first-child {
+      opacity: 1; /*Mostramos el primer <li>*/
+  }
+  
+  ul.slider li:target {
+      opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+  }
+  
+  .menu{
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .menu li{
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .menu li a{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: grey;
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    border-radius: 100%;
+  }
+ 
+
+
+  #color {
+    transition-property: background-color;
+    transition-duration: 3s;
+  }
+
+  .contenedor1 {
+	
+	display: flex;
+	width: 300px;
+	height: 40px;
+	color: #fff;
+	font-size: 40px;
+	line-height: 40px;
+	
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	overflow: hidden;
+	
+}
+
+ul {
+	list-style: none;
+	padding-left: 10px;
+	animation: cambiar 7s infinite;
+}
+
+ul, p {
+	margin: 0;
+}
+
+@keyframes cambiar {
+	
+	0%{ margin-top: 0;}
+	20%{ margin-top: 0;}
+	
+	25% {margin-top: -40px;}
+	50% {margin-top: -40px;}
+	
+	55% {margin-top: -80px;}
+	80% {margin-top: -80px;}
+	
+	85% {margin-top: -40px;}
+	95% {margin-top: -40px;}
+	
+	100% {margin-top: 0;}
+}

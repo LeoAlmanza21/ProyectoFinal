@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/colreorder/1.6.2/css/colReorder.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/rowgroup/1.3.1/css/rowGroup.dataTables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/inventario.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Northwind</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navBotones">
+                <div class="navbar-nav" id="botones">
+                    <a class="nav-item nav-link " href="index.html">Inicio <span class="sr-only"></span></a>
+                    <a class="nav-item nav-link" href="carrito.html">Carrito</a>
+                    <a class="nav-item nav-link" href="inventario.html">Inventario</a>
+                    <li class="nav-item"><a class="nav-link" href="Consulta1.html">Reporte 1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Consulta2.html">Reporte 2</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Consulta3.html">Reporte 3</a></li>
+                    <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+                </div>
+            </div>
+        </nav>
+
+        <p>Reporte que muestra el id del cliente, nombre de compañia, nombre del producto y las ventas de todos los productos en un año en especifico pero filtrandolos por trimestre</p>
+        <form class="d-flex w-100" style="margin-bottom: 6rem;" id="formularioCon" action="">
+            <div class="row flex-row w-100">
+
+                <div class="col-lg-4 col-md-6">
+                    <p>Año:</p>
+                    <select id="year" name="year" class="form-select">
+                        <option name="select" id="year" name="year" value="1996" selected>1996</option>
+                        <option name="select" id="year" name="year" value="1997">1997</option>
+                        <option name="select" id="year" name="year" value="1998">1998</option>
+                        <option name="select" id="year" name="year" value="1999">1999</option>
+                        <option name="select" id="year" name="year" value="2000">2000</option>
+                        <option name="select" id="year" name="year" value="2001">2001</option>
+                        <option name="select" id="year" name="year" value="2002">2002</option>
+                        <option name="select" id="year" name="year" value="2003">2003</option>
+                        <option name="select" id="year" name="year" value="2004">2004</option>
+                        <option name="select" id="year" name="year" value="2005">2005</option>
+                    </select>
+
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <p>Trimestre:</p>
+                    <select id="trim" name="trim" class="form-select">
+                        <option name="select" id="trim" name="trim" value="1" selected>1</option>
+                        <option name="select" id="trim" name="trim" value="2">2</option>
+                        <option name="select" id="trim" name="trim" value="3">3</option>
+                        <option name="select" id="trim" name="trim" value="4">4</option>
+
+                    </select>
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+                    <!-- <input type="text" id="startDate" name="startDate" value="1997-01-01" />
+        <input type="text" id="finishDate" name="finishDate" value="1997-12-31" /> -->
+                    <button type="button" class="btn btn-primary mx-3 p-2" style="height: 45px; margin-top: 4.5ex;"
+                        onclick="enviar()">Aceptar</button>
+                    <!-- <br><br> -->
+                </div>
+            </div>
+
+        </form>
+        <div class="row gx-0">
+
+            <div class="col-md-6 p-5">
+                <table id="tblProductos" class="display" style="width:100%"></table>
+            </div>
+
+
+            <div class="col-md-6">
+                <div id="ValorInventario"></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/colreorder/1.6.2/js/dataTables.colReorder.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.colVis.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-table2excel/dist/jquery.table2excel.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+
+<script>
+
+    // $(document).ready(function () {
+    //     $("#exportarBtn").click(function () {
+    //         $("#tblProductos").tableexcel({
+    //             filename: "tabla.xls" // Nombre del archivo de Excel
+    //         });
+    //     });
+    // });
+
+    // $('#tblProductos').DataTable({
+    //     buttons:[
+    //         {
+    //             extend: 'csv',
+    //             text: 'Export CSV',
+    //             className: 'btn-space',
+    //             exportOptions: {
+    //                 orthogonal: null
+    //             }
+    //         }
+    //     ]
+    // });
+
+    // $('#tblProductos').DataTable({
+    //     buttons: [
+    //         {
+    //             extend: 'excel',
+    //             text: 'Save current page',
+    //             exportOptions: {
+    //                 modifier: {
+    //                     page: 'current'
+    //                 }
+    //             }
+    //         }
+    //     ]
+    // });
+
+    const apiUrl = 'https://localhost:7214'
+    //const rest = 'name=Chai&startDate=1997-01-01&finishDate=1997-12-31'
+    //const listo = URL.createObjectURL(apiUrl+rest)
+
+    var startDate = "";
+    var finishDate = "";
+
+    //var url = `Product/GetQuery/${nameP.value}/${startDate.value}/${finishDate.value}`;
+    // 'https://localhost:7214/product/GetSalesFromProduct?name=Chai&startDate=1997-01-01&finishDate=1997-12-31'
+
+    function enviar() {
+
+        anio = document.getElementById('year').value; //
+        trim = document.getElementById('trim').value;
+
+
+        llenarTabla();
+    }
+
+
+    function llenarTabla() {
+        fetch("https://localhost:7214/product/GetSalesByTri/" + anio + "/" + trim)
+            .then(response => response.json())
+            .then(info => {
+                var table = $('#tblProductos').DataTable({
+                    destroy: true,
+                    data: info,
+                    columns:
+                        [
+                            {
+                                title: 'ID del Cliente', data: 'customer', render: $.fn.dataTable.render.text()
+                            },
+                            {
+                                title: 'Nombre de Compañia', data: 'company', render: $.fn.dataTable.render.text()
+                            },
+                            {
+                                title: 'Nombre de Producto', data: 'producto', render: $.fn.dataTable.render.text()
+                            },
+                            {
+                                title: 'Cantidad Vendida', data: 'cantidad', render: $.fn.dataTable.render.text()
+                            }
+
+
+                        ],
+                    // dom: 'Bfrtip',
+                    // colReorder: true,
+                    buttons: [
+                        'colvis',
+                        {
+                            extend: 'csv',
+                            text: 'Export Excel',
+                            className: 'btn-space',
+                            exportOptions: {
+                                orthogonal: null
+                            }
+                        },
+                    ],
+                    // order: [[1, 'asc']],
+
+                });
+
+            }).catch(error => console.log(error));
+
+
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(() => {
+            fetch("https://localhost:7214/product/GetSalesByTri/" + anio + "/" + trim
+            )
+                .then(response => {
+                    if (!response.ok) {
+                        throw response;
+                    }
+                    return response.json();
+                })
+                .then(info => {
+                    drawChart(info);
+                })
+                .catch(error => console.log(error));
+        });
+
+        function drawChart(info) {
+            var data1 = new google.visualization.DataTable();
+            data1.addColumn('string', 'Nombre del producto');
+            data1.addColumn('number', 'Cantidad vendida');
+
+            info.forEach(f => {
+                data1.addRow([f.producto, f.cantidad]);
+
+            });
+
+            var options = {
+                title: 'Ventas por producto',
+                'height': 500,
+            };
+            var chart = new google.visualization.ColumnChart(document.getElementById('ValorInventario'));
+            chart.draw(data1, options);
+        }
+
+    }
+
+
+</script>
+
+
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="css/responsive.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/inventario.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Northwind</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navBotones">
+                <div class="navbar-nav" id="botones">
+                    <a class="nav-item nav-link " href="index.html">Inicio <span class="sr-only"></span></a>
+                    <a class="nav-item nav-link" href="carrito.html">Carrito</a>
+                    <a class="nav-item nav-link active" href="inventario.html">Inventario</a>
+                    <li class="nav-item"><a class="nav-link" href="Consulta1.html">Reporte 1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Consulta2.html">Reporte 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Consulta3.html">Reporte 3</a></li>
+                    <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+                </div>
+            </div>
+        </nav>
+
+        <!-- <h1 class="my-2 text-center">Lista de productos</h1> -->
+
+        <form class="d-flex w-100" id="formulario">
+            <div class="idClave">
+                <p>Clave:</p>
+                <input name="clave" id="clave" type="text" placeholder="clave">
+            </div>
+            <div class="idProducto">
+                <p>Producto:</p>
+                <input name="producto" id="producto" type="text" placeholder="producto">
+            </div>
+            <div class="idCategoria">
+                <p>Categoria:</p>
+                <input name="categoria" id="categoria" type="categoria" placeholder="categoria">
+            </div>
+            <div class="idExistencia">
+                <p>Existencia:</p>
+                <input name="existencia" id="existencia" type="existencia" placeholder="existencia">
+            </div>
+            <div class="idPrecio">
+                <p>Precio:</p>
+                <input name="precio" id="precio" type="precio" placeholder="precio">
+            </div>
+            <div class="idFoto">
+                <p>Foto:</p>
+                <input name="foto" id="foto" type="foto" placeholder="foto">
+            </div>
+            <div class="idReorden">
+                <p>Reorden:</p>
+                <input name="reorden" id="reorden" type="reorden" placeholder="reorden">
+            </div>
+
+            <div id="agregar">
+                <button type="reset" onclick="agregarProducto()"
+                    class="agregar btn btn-primary btn-animate">Agregar</button>
+                <!-- <a href="#" class="btn btn-primary btn-animate">Agregar</a> -->
+            </div>
+
+        </form>
+
+        <div class="container mt-5">
+            <table id="tblInventario" class="cell-border stripe w-100"></table>
+        </div>
+
+
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/jquery.dataTables.min.js"></script>
+        <script src="js/dataTables.bootstrap5.min.js"></script>
+        <script src="js/dataTables.responsive.min.js"></script>
+        <script src="js/responsive.bootstrap5.min.js"></script>
+        <script src="js/inventario.js"></script>
+
+        <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap5.min.js"></script>
+    <script src="js/dataTables.responsive.min.js"></script>
+    <script src="js/responsive.bootstrap5.min.js"></script> 
+    
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>  -->
+
+
+    </div>
+</body>
+
+</html>

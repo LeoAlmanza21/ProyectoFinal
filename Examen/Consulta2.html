@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/colreorder/1.6.2/css/colReorder.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/rowgroup/1.3.1/css/rowGroup.dataTables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/inventario.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Northwind</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navBotones">
+                <div class="navbar-nav" id="botones">
+                    <a class="nav-item nav-link " href="index.html">Inicio <span class="sr-only"></span></a>
+                    <a class="nav-item nav-link" href="carrito.html">Carrito</a>
+                    <a class="nav-item nav-link" href="inventario.html">Inventario</a>
+                    <li class="nav-item"><a class="nav-link" href="Consulta1.html">Reporte 1</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Consulta2.html">Reporte 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Consulta3.html">Reporte 3</a></li>
+                    <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+                </div>
+            </div>
+        </nav>
+
+        <p>Reporte que muestra las ventas que ha tenido un producto en especifico en un periodo de tiempo determinado</p>
+        <form class="d-flex" style="margin-bottom: 6rem;" id="formularioCon" action="">
+            <div class="row flex-row w-100">
+                <div class="col-lg-3 col-md-6">
+                    <p>Producto:</p>
+                    <select name="select" id="nameP" name="name" class="form-select">
+                        <option name="select" id="nameP" name="name" value="Chai" selected>Chai</option>
+                        <option name="select" id="nameP" name="name" value="Chang">Chang</option>
+                        <option name="select" id="nameP" name="name" value="Aniseed Syrup">Aniseed Syrup</option>
+                        <option name="select" id="nameP" name="name" value="Chef Anton's Gumbo Mix">Chef Anton's Gumbo
+                            Mix
+                        </option>
+                        <option name="select" id="nameP" name="name" value="Ikura">Ikura</option>
+                        <option name="select" id="nameP" name="name" value="Queso Cabrales">Queso Cabrales</option>
+                        <option name="select" id="nameP" name="name" value="Pavlova">Pavlova</option>
+                        <option name="select" id="nameP" name="name" value="Geitost">Geitost</option>
+                    </select>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <p>Fecha de Inicio:</p>
+                    <select id="startDate" name="startDate" class="form-select">
+                        <option name="select" id="startDate" name="startDate" value="1997-01-01" selected>1997-01-01
+                        </option>
+                        <option name="select" id="startDate" name="startDate" value="1997-02-01">1997-02-01</option>
+                        <option name="select" id="startDate" name="startDate" value="1997-03-01">1997-03-01</option>
+                        <option name="select" id="startDate" name="startDate" value="1997-04-01">1997-04-01</option>
+                        <option name="select" id="startDate" name="startDate" value="1997-05-01">1997-05-01</option>
+                        <option name="select" id="startDate" name="startDate" value="1997-06-01">1997-06-01</option>
+                        <option name="select" id="startDate" name="startDate" value="1997-07-01">1997-07-01</option>
+                        <option name="select" id="startDate" name="startDate" value="1997-08-01">1997-08-01</option>
+                        <option name="select" id="startDate" name="startDate" value="1997-09-01">1997-09-01</option>
+                        <option name="select" id="startDate" name="startDate" value="1997-10-01">1997-10-01</option>
+                        <option name="select" id="startDate" name="startDate" value="1997-11-01">1997-11-01</option>
+                        <option name="select" id="startDate" name="startDate" value="1997-12-01">1997-12-01</option>
+                    </select>
+
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <p>Fecha de Fin:</p>
+                    <select id="finishDate" name="finishDate" class="form-select">
+                        <option name="select" id="finishDate" name="finishDate" value="1997-01-31" selected>1997-01-31
+                        </option>
+                        <option name="select" id="finishDate" name="finishDate" value="1997-02-28">1997-02-28</option>
+                        <option name="select" id="finishDate" name="finishDate" value="1997-03-31">1997-03-31</option>
+                        <option name="select" id="finishDate" name="finishDate" value="1997-04-30">1997-04-30</option>
+                        <option name="select" id="finishDate" name="finishDate" value="1997-05-31">1997-05-31</option>
+                        <option name="select" id="finishDate" name="finishDate" value="1997-06-30">1997-06-30</option>
+                        <option name="select" id="finishDate" name="finishDate" value="1997-07-31">1997-07-31</option>
+                        <option name="select" id="finishDate" name="finishDate" value="1997-08-31">1997-08-31</option>
+                        <option name="select" id="finishDate" name="finishDate" value="1997-09-30">1997-09-30</option>
+                        <option name="select" id="finishDate" name="finishDate" value="1997-10-31">1997-10-31</option>
+                        <option name="select" id="finishDate" name="finishDate" value="1997-11-30">1997-11-30</option>
+                        <option name="select" id="finishDate" name="finishDate" value="1997-12-31">1997-12-31</option>
+                    </select>
+                </div>
+
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- <input type="text" id="startDate" name="startDate" value="1997-01-01" />
+        <input type="text" id="finishDate" name="finishDate" value="1997-12-31" /> -->
+                    <button type="button" class="btn btn-primary mx-3 p-2" style="height: 45px; margin-top: 4.5ex;"
+                        onclick="enviar()">Aceptar</button>
+                    <!-- <br><br> -->
+                </div>
+            </div>
+
+        </form>
+        <div class="row gx-0">
+
+            <div class="col-md-6 p-5">
+                <table id="tblProductos" class="display" style="width:100%"></table>
+            </div>
+
+
+            <div class="col-md-6">
+                <div id="ValorInventario"></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/colreorder/1.6.2/js/dataTables.colReorder.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.colVis.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-table2excel/dist/jquery.table2excel.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+
+<script>
+
+    // $(document).ready(function () {
+    //     $("#exportarBtn").click(function () {
+    //         $("#tblProductos").tableexcel({
+    //             filename: "tabla.xls" // Nombre del archivo de Excel
+    //         });
+    //     });
+    // });
+
+    // $('#tblProductos').DataTable({
+    //     buttons:[
+    //         {
+    //             extend: 'csv',
+    //             text: 'Export CSV',
+    //             className: 'btn-space',
+    //             exportOptions: {
+    //                 orthogonal: null
+    //             }
+    //         }
+    //     ]
+    // });
+
+    // $('#tblProductos').DataTable({
+    //     buttons: [
+    //         {
+    //             extend: 'excel',
+    //             text: 'Save current page',
+    //             exportOptions: {
+    //                 modifier: {
+    //                     page: 'current'
+    //                 }
+    //             }
+    //         }
+    //     ]
+    // });
+
+    const apiUrl = 'https://localhost:7214'
+    //const rest = 'name=Chai&startDate=1997-01-01&finishDate=1997-12-31'
+    //const listo = URL.createObjectURL(apiUrl+rest)
+    var nameP = "";
+    var startDate = "";
+    var finishDate = "";
+
+    //var url = `Product/GetQuery/${nameP.value}/${startDate.value}/${finishDate.value}`;
+    // 'https://localhost:7214/product/GetSalesFromProduct?name=Chai&startDate=1997-01-01&finishDate=1997-12-31'
+
+    function enviar() {
+        nameP = document.getElementById('nameP').value;
+        startDate = document.getElementById('startDate').value; //
+        finishDate = document.getElementById('finishDate').value;
+        console.log(nameP, startDate, finishDate);
+
+        llenarTabla();
+    }
+
+
+    function llenarTabla() {
+        fetch("https://localhost:7214/product/GetSalesFromProduct/" + nameP + "/" + startDate + "/" + finishDate)
+            .then(response => response.json())
+            .then(info => {
+                var table = $('#tblProductos').DataTable({
+                    destroy: true,
+                    data: info,
+                    columns:
+                        [
+                            {
+                                title: 'ID Producto', data: 'product', render: $.fn.dataTable.render.text()
+                            },
+                            {
+                                title: 'Nombre de Producto', data: 'name', render: $.fn.dataTable.render.text()
+                            },
+                            {
+                                title: 'Cantidad Vendida', data: 'quantity', render: $.fn.dataTable.render.text()
+                            },
+                            {
+                                title: 'Fecha de la orden', data: 'orderD', render: $.fn.dataTable.render.text()
+                            }
+
+                        ],
+                    buttons: [
+                        'colvis',
+                        {
+                            extend: 'csv',
+                            text: 'Export Excel',
+                            className: 'btn-space',
+                            exportOptions: {
+                                orthogonal: null
+                            }
+                        },
+                    ]
+                });
+
+            }).catch(error => console.log(error));
+
+
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(() => {
+            fetch("https://localhost:7214/product/GetSalesFromProduct/" + nameP + "/" + startDate + "/" + finishDate
+            )
+                .then(response => {
+                    if (!response.ok) {
+                        throw response;
+                    }
+                    return response.json();
+                })
+                .then(info => {
+                    drawChart(info);
+                })
+                .catch(error => console.log(error));
+        });
+        function drawChart(info) {
+            var data1 = new google.visualization.DataTable();
+            data1.addColumn('string', 'Nombre del producto');
+            data1.addColumn('number', 'Cantidad');
+            info.forEach(f => {
+                data1.addRow([f.productName, f.quantity]);
+
+            });
+
+            var options = {
+                title: 'Ventas por producto',
+                'height': 500,
+            };
+            var chart = new google.visualization.ColumnChart(document.getElementById('ValorInventario'));
+            chart.draw(data1, options);
+        }
+
+    }
+
+
+</script>
+
+
+
+</html>
